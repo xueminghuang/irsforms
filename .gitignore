@@ -1,12 +1,20 @@
-.rvmrc
-*.sw?
+## MAC OS
 .DS_Store
+
+## Eclipse
+.project
+
+## VIM
+*.sw?
+
+## PROJECT::GENERAL
 coverage
 rdoc
 pkg
-.project
-.loadpath
-*qt_temp*
 *~
 *.gem
 install.log
+
+## PROJECT::SPECIFIC
+.bundle
+Gemfile.lock
