@@ -27,32 +27,5 @@ module IRSForms
     field 'requester_info', 'topmostSubform[0].Page1[0].f1_9[0]', String
     field 'ssn', IRSForms::Editors::W9SSNEditor.new, String, ''
     field 'fein', IRSForms::Editors::W9FEINEditor.new, String, ''
-     
-    if false
-      topmostSubform[0].Page1[0].f1_1[0]
-      topmostSubform[0].Page1[0].f1_2[0]
-      topmostSubform[0].Page1[0].FederalClassification[0].c1_1[0]
-      topmostSubform[0].Page1[0].FederalClassification[0].c1_1[1]
-      topmostSubform[0].Page1[0].FederalClassification[0].c1_1[2]
-      topmostSubform[0].Page1[0].FederalClassification[0].c1_1[3]
-      topmostSubform[0].Page1[0].FederalClassification[0].c1_1[4]
-      topmostSubform[0].Page1[0].FederalClassification[0].c1_1[5]
-      topmostSubform[0].Page1[0].FederalClassification[0].f1_3[0]
-      topmostSubform[0].Page1[0].FederalClassification[0].c1_7[0]
-      topmostSubform[0].Page1[0].FederalClassification[0].f1_4[0]
-      topmostSubform[0].Page1[0].Exemptions[0].f1_5[0]
-      topmostSubform[0].Page1[0].Exemptions[0].f1_6[0]
-      topmostSubform[0].Page1[0].Address[0].f1_7[0]
-      topmostSubform[0].Page1[0].Address[0].f1_8[0]
-      topmostSubform[0].Page1[0].f1_9[0]
-      topmostSubform[0].Page1[0].f1_10[0]
-      topmostSubform[0].Page1[0].SSN[0].f1_11[0]
-      topmostSubform[0].Page1[0].SSN[0].f1_12[0]
-      topmostSubform[0].Page1[0].SSN[0].f1_13[0]
-      topmostSubform[0].Page1[0].EmployerID[0].f1_14[0]
-      topmostSubform[0].Page1[0].EmployerID[0].f1_15[0]
-      topmostSubform[0]
-    end
-
   end
 end

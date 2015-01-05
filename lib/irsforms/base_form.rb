@@ -10,15 +10,15 @@ module IRSForms
 
     extend(IRSForms::FormField)
 
-    def to_pdf
-      pdftk = PdfForms.new('/usr/local/bin/pdftk')
+    def to_pdf(path = nil)
+      pdftk = EnhancedPdftkWrapper.new(pdftk_path)
 
-      form_fields = pdftk.get_fields(template_file)
-      form_fields.each do |f|
-        puts "#{f.name} #{f.type} #{f.value_default} #{f.options}"
-      end
-      
-      pdftk.fill_form template_file, 'output.pdf', collect_data
+      # form_fields = pdftk.get_fields(template_file)
+      # form_fields.each do |f|
+        # puts "#{f.name} #{f.type} #{f.value_default} #{f.options}"
+      # end
+
+      pdftk.fill_form template_file, path, collect_data
     end
 
     def collect_data
@@ -29,6 +29,12 @@ module IRSForms
       end
       
       data
+    end
+
+    private 
+    def pdftk_path
+      # '/usr/local/bin/pdftk'
+      @pdftk_path ||= (defined?(Bundler::GemfileError) && File.exists?('Gemfile') ? `bundle exec which pdftk` : `which pdftk`).chomp
     end
   end
 end

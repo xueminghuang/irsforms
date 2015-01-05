@@ -7,7 +7,7 @@ describe IRSForms::W9 do
       
       w9.name = 'Xueming Huang'
       w9.business_name = 'DevSwat, LLC'
-      w9.entity_class = 'LLC'
+      w9.entity_class = IRSForms::Editors::W9EntityClassificationEditor::LLC
       w9.tax_class='S'
       w9.other_class = 'N/A'
       w9.exemption_payee_code = 123
@@ -19,8 +19,17 @@ describe IRSForms::W9 do
       w9.fein = '12-3456789' 
        
       w9.name.should eql("Xueming Huang")
-      puts w9.collect_data
-      w9.to_pdf      
+      # puts w9.collect_data
+      # w9.to_pdf "output-#{Time.now.strftime('%Y%m%d%H%M%S')}.pdf"
+      output_file = "output-#{Time.now.strftime('%Y%m%d%H%M%S')}.pdf"
+      w9.to_pdf output_file
+
+      #pdftk = EnhancedPdftkWrapper.new()
+      #form_field = pdftk.get_field(output_file, )
+
+      # form_fields.each do |f|
+      #  puts "#{f.name} #{f.type} #{f.value_default} #{f.options}"
+      # end
     end
   end
 end
